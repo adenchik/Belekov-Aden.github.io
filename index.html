@@ -1,302 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <!-- Global Metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="sitemap" href="sitemap.xml">
-    <!-- Font preloads -->
-    <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin>
-    <title>Belekov Aden</title>
-    <meta name="title" content="Belekov Aden">
-    <meta name="description" content="Backend develop | System Administrator">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Специалист | Разработка и Администрирование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        @import"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";:root {
-            --accent: #2337ff;
-            --accent-dark: #000d8a;
-            --black: 15, 18, 25;
-            --gray: 96, 115, 159;
-            --gray-light: 229, 233, 240;
-            --gray-dark: 34, 41, 57;
-            --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-            --background: 226, 230, 224;
-            --background-dark: #181B19;
-            --background-light: #E2E6E0;
-            --green-dark-main: #C7D1CC;
-            --green-dark-secondary: #8E9A94;
-            --green-dark-darker: #5D6963;
-            --green-dark-underline: #535454;
-            --green-primary-dark: #C7D1CC;
-            --green-primary-light: #223E30;
-            --green-secondary-light: #656F6A
-        }
-
-        .dark-main {
-            color: var(--green-dark-main)
-        }
-
-        .dark-secondary {
-            color: var(--green-dark-secondary)
-        }
-
-        .dark-underline {
-            color: var(--green-dark-underline)
-        }
-
-        .basic-p,h1,h2,h3,h4,h5,h6 {
-            font-size: 14px;
-            line-height: 160%;
-            font-weight: 300
-        }
-
-        .inter-reg {
-            font-family: Inter,serif;
-            font-optical-sizing: auto;
-            font-weight: 300;
-            font-style: normal
-        }
-
-        body {
-            font-family: Inter,sans-serif;
-            margin: 0;
-            text-align: left;
-            text-wrap: pretty;
-            display: flex;
-            flex-direction: column;
-            gap: 36px;
-            width: 100%;
-            max-width: 720px;
-            padding: 80px 48px 40px;
-            color: var(--green-dark-main);
-            background: var(--background-dark)
-        }
-
-        nav {
-            padding-bottom: 80px
-        }
-
-        .name {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 160%;
-            color: var(--green-dark-main)
-        }
-
-        p,.inline-link {
-            font-size: 14px;
-            line-height: 160%;
-            font-weight: 300;
-            color: var(--green-dark-secondary)
-        }
-
-        p a,.inline-link {
-            color: var(--green-dark-secondary);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-color: var(--green-dark-underline);
-            transition: text-decoration-color .3s ease
-        }
-
-        p a:hover,.inline-link:hover {
-            text-decoration-color: var(--green-dark-secondary)
-        }
-
-        .main-index {
-            display: flex;
-            flex-direction: column;
-            gap: 36px
-        }
-
-        main {
-            margin: auto;
-            width: 100%;
-            position: relative
-        }
-
-        .journal-main:hover {
-            .title {
-                text-decoration-color: var(--green-dark-secondary)
-            }
-        }
-
-        ul {
-            list-style-type: none
-        }
-
-        ul li * {
-            text-decoration: none;
-            transition: .2s ease
-        }
-
-        ul li a {
-            display: block
-        }
-
-        .title {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-color: var(--green-dark-underline);
-            line-height: 160%;
-            color: var(--green-dark-main)
-        }
-
-        article {
-            position: relative
-        }
-
-        .journal-title {
-            color: var(--green-dark-main);
-            line-height: 160%
-        }
-
-        .date {
-            font-size: 14px;
-            line-height: 160%;
-            font-weight: 300;
-            color: var(--green-dark-secondary);
-            display: block
-        }
-
-        .last-updated-on {
-            font-style: italic
-        }
-
-        article h1,h2,h3,h4,h5,h6 {
-            color: var(--green-dark-secondary);
-            font-size: 14px;
-            line-height: 160%;
-            font-weight: 300
-        }
-
-        figure {
-            display: inline-block;
-            margin: 1em 0
-        }
-
-        figcaption {
-            font-size: 12px;
-            font-style: italic;
-            color: var(--green-dark-darker);
-            margin-top: .5em
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px
-        }
-
-        article ul,article ol {
-            padding-left: 16px;
-            list-style-position: outside
-        }
-
-        article li {
-            font-size: 14px;
-            line-height: 160%;
-            color: var(--green-dark-secondary)
-        }
-
-        article li::marker {
-            color: var(--green-dark-underline)
-        }
-
-        article ul {
-            list-style-type: disc
-        }
-
-        article ol {
-            list-style-type: decimal
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid rgb(var(--gray-light))
-        }
-
-        .sr-only {
-            border: 0;
-            padding: 0;
-            margin: 0;
-            position: absolute!important;
-            height: 1px;
-            width: 1px;
-            overflow: hidden;
-            clip: rect(1px 1px 1px 1px);
-            clip: rect(1px,1px,1px,1px);
-            clip-path: inset(50%);
-            white-space: nowrap
-        }
-
-        @media screen and (max-width: 768px) {
-            body {
-                padding:40px 20px
-            }
-        }
-
-        header[data-astro-cid-3ef6ksr2] {
-            display: flex;
-            flex-direction: column;
-            gap: 36px
-        }
-
-        h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active {
-            text-decoration: none
-        }
-
-        nav[data-astro-cid-3ef6ksr2] {
-            display: flex;
-            align-items: start;
-            gap: 24px
-        }
-
-        nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2] {
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 160%;
-            color: var(--green-dark-secondary)
-        }
-
-        nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active {
-            text-decoration: underline;
-            text-underline-offset: 10px;
-            color: var(--green-dark-main)
-        }
-    </style>
 </head>
 <body>
-<main class="main-index">
-    <div class="flex flex-col">
-        <p class="name">Belekov Aden</p>
-        <p>
-            Backend Developer | System Administrator
-        </p>
-    </div>
-    <div class="flex flex-col gap-y-4">
-        <p>Soon projects ))</p>
-    </div>
-    <div class="flex flex-col gap-y-3">
-        <p class="dark-main">Find me here</p>
-        <div class="flex flex-col gap-y-1">
-            <a class="inline-link" target="_blank" rel="noopener noreferrer"
-               href="https://www.linkedin.com/in/belekovaden/">Linkedin</a>
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="tel:+996706100449">+996 706 100
-                449</a>
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Belekov-Aden">GitHub</a>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="fade-up">Профессиональное<br>IT-обслуживание и<br>разработка под ключ</h1>
+        <p class="fade-up delay-1">Системное администрирование, сборка ПК, настройка сетей и создание программных
+            решений для бизнеса и дома.</p>
+
+        <div class="btn-group fade-up delay-2">
+            <a href="#contacts" class="btn btn-primary">Связаться со мной</a>
         </div>
     </div>
-    <div class="flex flex-col gap-y-3">
-        <p class="dark-main">Daily Tools</p>
-        <div class="flex flex-col gap-y-1">
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="https://www.python.org/">Python</a>
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="https://www.djangoproject.com/">Django</a>
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="#">SQL</a>
-            <a class="inline-link" target="_blank" rel="noopener noreferrer" href="#">HTML & CSS</a>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="container">
+    <h2 class="fade-up">Мои компетенции</h2>
+
+    <div class="services-grid">
+        <!-- Block 1 -->
+        <div class="glass-card fade-up delay-1">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 17H4c-1.1 0-2 .9-2 2v2h20v-2c0-1.1-.9-2-2-2zM4 19v-1h16v1H4zM20 3H4c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 11H4V5h16v9z"/>
+                </svg>
+            </div>
+            <h3>Системное администрирование</h3>
+            <ul>
+                <li>Диагностика и ремонт ПК/Ноутбуков</li>
+                <li>Сборка компьютеров под задачи</li>
+                <li>Установка и настройка Windows/Linux. Установка программ.</li>
+                <li>Чистка и оптимизация системы</li>
+                <li>Настройка и поддержка серверов</li>
+            </ul>
+        </div>
+
+        <!-- Block 2 -->
+        <div class="glass-card fade-up delay-2">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/>
+                </svg>
+            </div>
+            <h3>Сети и оборудование</h3>
+            <ul>
+                <li>Настройка роутеров и маршрутизаторов</li>
+                <li>Организация локальных сетей (LAN/WLAN)</li>
+                <li>Удалённая техническая поддержка</li>
+                <li>Настройка защищенных VPN-соединений</li>
+                <li>Проектирование сетевой архитектуры</li>
+            </ul>
+        </div>
+
+        <!-- Block 3 -->
+        <div class="glass-card fade-up delay-3">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                </svg>
+            </div>
+            <h3>Программирование</h3>
+            <ul>
+                <li>Создание современных сайтов</li>
+                <li>Разработка Telegram-ботов</li>
+                <li>Надежная Backend-разработка</li>
+                <li>Автоматизация бизнес-процессов</li>
+                <li>Разработка индивидуального ПО</li>
+            </ul>
         </div>
     </div>
-</main>
+</section>
+
+<!-- Why Me Section -->
+<section class="container">
+    <div class="why-me-inner">
+        <div class="fade-up">
+            <h2>Почему<br>выбирают меня?</h2>
+            <p>Я ценю время клиентов и предоставляю решения, которые работают безотказно. Мой подход — это качество
+                уровня Enterprise, доступное малому бизнесу и частным лицам.</p>
+        </div>
+
+        <div class="why-me-list fade-up delay-1">
+            <div class="why-item"><span>01.</span> Ответственность и результат</div>
+            <div class="why-item"><span>02.</span> Современные технологии</div>
+            <div class="why-item"><span>03.</span> Строгая безопасность данных</div>
+            <div class="why-item"><span>04.</span> Работа без бюрократии</div>
+            <div class="why-item"><span>05.</span> Поддержка после выполнения</div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-content fade-up">
+            <h2 style="margin-bottom: 24px;">Обо мне</h2>
+            <p>
+                Я — независимый IT-специалист с многолетним опытом работы в сфере технологий.
+                Моя миссия — решать реальные задачи бизнеса и помогать людям через интеграцию
+                инновационных решений. Я ориентируюсь исключительно на результат, будь то сборка
+                мощной рабочей станции, настройка сложной серверной инфраструктуры или написание
+                кода для автоматизации ваших рутинных процессов. Используя только современные
+                технологии, я создаю системы, которые работают на вас.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container fade-up">
+        <h2>Нужен надёжный<br>IT-специалист?</h2>
+        <a href="#contacts" class="btn btn-primary">Получить консультацию</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contacts" class="container">
+    <div class="footer-content">
+        <div class="footer-logo">TECH<span>PRO</span></div>
+        <div class="footer-links">
+            <p>Email:
+                <a href="mailto:admin@adenchik.dev">admin@adenchik.dev</a>
+            </p>
+            <p>Телефон:
+                <a href="tel:+996706100449">+996 706 100 449</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Скрипт для плавной анимации при скролле -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Анимируем только один раз
+                }
+            });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll('.fade-up');
+        fadeElements.forEach(el => observer.observe(el));
+    });
+</script>
 </body>
 </html>
