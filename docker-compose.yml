@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8089:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+    restart: always
