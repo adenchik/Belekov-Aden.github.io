@@ -2,9 +2,7 @@ version: "3.9"
 
 services:
   web:
-    image: nginx:alpine
+    build: .
     ports:
       - "8089:80"
-    volumes:
-      - ./:/usr/share/nginx/html
     restart: always
